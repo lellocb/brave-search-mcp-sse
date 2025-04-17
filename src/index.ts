@@ -40,9 +40,9 @@ logger.info(`Starting Brave Search MCP Server v${SERVER_INFO.version} (${SERVER_
 
 // Tool handlers
 server.setRequestHandler(ListToolsRequestSchema, async () => {
-  logger.info(`Registering tools: ${WEB_SEARCH_TOOL.name}, ${LOCAL_SEARCH_TOOL.name}`);
+  logger.info(`Registering tools: ${WEB_SEARCH_TOOL.name}`);
   return {
-    tools: [WEB_SEARCH_TOOL, LOCAL_SEARCH_TOOL],
+    tools: [WEB_SEARCH_TOOL],
   };
 });
 
@@ -62,10 +62,6 @@ server.setRequestHandler(CallToolRequestSchema, async (request: CallToolRequest)
     switch (name) {
       case "brave_web_search":
         result = await handleWebSearch(args);
-        break;
-
-      case "brave_local_search":
-        result = await handleLocalSearch(args);
         break;
 
       default:
