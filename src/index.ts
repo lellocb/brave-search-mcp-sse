@@ -13,7 +13,6 @@ import { SERVER_INFO, BRAVE_API_KEY } from './config/constants.js';
 
 // Import tools
 import { WEB_SEARCH_TOOL, handleWebSearch } from './tools/webSearch.js';
-import { LOCAL_SEARCH_TOOL, handleLocalSearch } from './tools/localSearch.js';
 
 // Import transport
 import { setupSSETransport } from './transport/sseTransport.js';
